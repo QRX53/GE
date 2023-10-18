@@ -32,6 +32,7 @@ public class Runner {
     }
 
     private static void run() {
+        System.out.println(THREAD_COUNT);
         Checker.addHistoricalData();
         ExecutorService executorService = null;
 
@@ -39,9 +40,14 @@ public class Runner {
             executorService = Executors.newFixedThreadPool(THREAD_COUNT);
 
             // Start checking Minecraft servers
+            String rndip = rndip();
             while (true) {
-                executorService.execute(new Checker(rndip()));
+                executorService.execute(new Checker(rndip));
+                if (THREAD_COUNT >= 100) {
+                    System.out.println("Checking " + rndip);
+                }
                 incrementServersChecked();
+                rndip = rndip();
             }
         } catch (Exception e) {
             System.err.println("Error: " + e.getMessage());
