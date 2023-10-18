@@ -93,7 +93,7 @@ public class Checker extends Thread {
 
         this.output = output;
 
-        new DiscordWebhook("https://discord.com/api/webhooks/1105000430632718416/cvWlDqg7vc5eooZvSwcwQXdBeK6WFRtVvl4_fVFCpOfR6NHbZ2xEMFdC3g5NVz8JO8BI").sendMessage(output);
+        new DiscordWebhook("yourwebhook").sendMessage(output);
         try {
             Thread.sleep(500);
         } catch (InterruptedException e) {
