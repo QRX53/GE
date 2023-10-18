@@ -1,6 +1,6 @@
 # Brute force minecraft server finder
 
-Can actually find sevrers with some efficiency (~10/hr give or take).
+Can actually find servers with some efficiency (~10/hr give or take).
 
 Can be configured to send results to a discord webhook
 
